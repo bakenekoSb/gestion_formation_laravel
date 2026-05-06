@@ -6,9 +6,6 @@ use FPDF;
 //ici se trouve la classe PDFService qu'on peut utiliser dans le controller 
 class PDFService extends FPDF
 {
-    function Header(){
-    $this->Ln(5);
-    }
     //Utile si creation de tableau dans le pdf
     // Largeurs des colonnes
     protected $widths;

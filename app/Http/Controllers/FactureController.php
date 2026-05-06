@@ -19,7 +19,7 @@ class FactureController extends Controller
     public function showForm()
     {
         $formations = DB::table('formations')->get(); //prend les données de la table formations
-        return view('facture', compact('formations'));//le rend sous form =e  tableau associatif avec comme clé le nom de la variable et comme valeur les données
+        return view('facture', compact('formations'));//le rend sous forme tableau associatif avec comme clé le nom de la variable et comme valeur les données
     }
 
     //fonction pour generer la facture en pdf
@@ -67,6 +67,7 @@ class FactureController extends Controller
         // ====================================
         // EN-TÊTE SOCIÉTÉ
         // ====================================
+        $pdf->Ln(5);
         $pdf->SetFont('Arial','',11);
         $pdf->Cell(0,5,'Entreprise:',0,1);
         $pdf->Cell(0,-5,'GASY TECH',0,1,'C');
@@ -147,7 +148,7 @@ class FactureController extends Controller
         $pdf->SetFont('Arial','B',11);
         $pdf->Cell(0,0,'Conditions de paiement',0,1);
         $pdf->SetFont('Arial','',11);
-        $pdf->Cell(0,10,'Les modes de paiements accptes sont le virement bancaire et Orange Money',0,1);
+        $pdf->Cell(0,10,'Les modes de paiements acceptes sont le virement bancaire et Orange Money',0,1);
         $pdf->Ln(10);
 
         //prendre position de y
